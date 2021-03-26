@@ -162,10 +162,19 @@ function initStoreLocatorMap(data) {
         'markerid')], 'click');
     });
 
+    jQuery('.gmap_getdirlnk').on('click',function (event) {
+      event.preventDefault();
+      var geturl = jQuery(this).attr('href');
+      window.location.href=geturl;
+      // window.open(geturl, '_blank');
+        
+    });
+
   jQuery('#search-location').on('keyup', function () {
     var value = jQuery(this).val();
     jQuery('.list-wrapper li').each(function () {
-      if (jQuery(this).text().search(new RegExp(value, 'i')) > -1) {
+      // if (jQuery(this).text().search(new RegExp(value, 'i')) > -1) {
+      if (jQuery(this).find('.loc-postcode').text().search(new RegExp(value, 'i')) > -1) {
         jQuery(this).show();
       }
       else {
@@ -213,6 +222,12 @@ function initMap(lt, lg, icon) {
   });
 
 }
+
+// $(document).ready(function(){
+//   $("button").click(function(){
+//     $("p").toggleClass("disbl-loc-map");
+//   });
+// });
 
 /**
  * Place Marker on Click on Map.

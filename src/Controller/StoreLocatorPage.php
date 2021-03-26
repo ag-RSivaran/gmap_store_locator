@@ -16,9 +16,11 @@ class StoreLocatorPage extends ControllerBase {
     $content = [];
     $content['searchitem'] = [
       '#type' => 'textfield',
+      '#prefix' => '<div class="myclass"><p class="gmap_fndstr_spn">FIND A STORE</p><p class="gmap_map_spn">MAP</p></div>',
       '#attributes' => [
         'id' => ['search-location'],
-        'placeholder' => $this->t('Search keyword'),
+        'placeholder' => $this->t('Enter the Pincode'),
+        'class' => ['strlct-src-icon']
       ],
     ];
     // Preprocesses the Results.
