@@ -1,6 +1,0 @@
-services:
-  store_locator.geocodes:
-    class: Drupal\store_locator\Services\GeocoderConsumerService
-    arguments: ['@http_client', '@language_manager', '@config.factory']
-    tags:
-      - { name: geo_service }
